@@ -67,3 +67,13 @@ button:hover{
 button:active{
     background-color: hsl(230, 34%, 26%);
 }
+
+@media (max-width: 800px){
+    main{
+        padding-left: 179px;
+        padding-right: 179px;
+    }
+    h1{
+        margin-top: 100px;
+    }
+}
