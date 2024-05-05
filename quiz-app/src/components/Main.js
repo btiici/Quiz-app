@@ -1,19 +1,21 @@
-import blob1 from "../images/blob 2.svg"
-import blob2 from "../images/blob 3.svg"
+import blob3 from "../images/blob 2.svg"
+import blob4 from "../images/blob 3.svg"
 
 
 export default function Main (props){
+
+    const answerOptions = [...props.item.incorrect_answers, props.item.correct_answer].sort(() => Math.random() - 0.5);
+    const options = answerOptions.map((option, index) => (
+        <button 
+        key={index}
+        option={option}>{option}</button>
+    ))
     return(
-        <main className="main">
-            <img src={blob1} className="blob1"/>
+        <div>
             <h2>{props.item.question}</h2>
-            <div>
-                <button>Adiós</button>
-                <button>Hola</button>
-                <button>Au Revoir</button>
-                <button>Salir</button>
-            </div>
-            <img src={blob2} className="blob2"/>
-        </main>
+            <span>
+                {options}
+            </span>
+        </div>
     )
 }
