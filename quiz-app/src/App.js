@@ -4,13 +4,14 @@ import blob2 from "../src/images/blob 5.svg"
 import Main from "./components/Main"
 import blob3 from "./images/blob 2.svg"
 import blob4 from "./images/blob 3.svg"
+import { nanoid } from "nanoid";
 
 
 export default function App(){
     const [showMain, setShowMain]= React.useState(false)
 
     const [questions, setQuestions]=React.useState([])
-
+       
     function handleStartQuiz(){
         setShowMain(true);
     }
@@ -20,17 +21,17 @@ export default function App(){
         .then(res => res.json())
         .then(data => setQuestions(data.results))
         .catch(error => console.error("Error fetching data:", error))
-    },[])
+            },[]);
 
     const allQuestions = questions.map((item, index) =>{
         return(
             <Main
             item={item}
-            key={index} />
+            key={index}
+            />
         )
     })
-
-    
+     
     return(
         <div>
             {!showMain && (
