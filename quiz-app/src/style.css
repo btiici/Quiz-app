@@ -52,6 +52,27 @@ span{
     background-color: rgba(214, 219, 245, 1);
 }
 
+.check{
+    background-color: rgba(77, 91, 158, 1);
+    width: 10rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    color: rgba(245, 247, 251, 1);
+}
+
+.check:hover{
+    background-color: hsl(230, 34%, 36%);
+}
+
+.check:active{
+    background-color: hsl(230, 34%, 26%);
+}
+
 
 .blob1{
     position: absolute;

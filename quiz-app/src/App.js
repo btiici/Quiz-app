@@ -31,6 +31,10 @@ export default function App(){
             />
         )
     })
+
+    function checkAnswer(){
+       
+    }
      
     return(
         <div>
@@ -47,8 +51,12 @@ export default function App(){
                 <div className="main">
                     <img src={blob3} className="blob3" />
                     {allQuestions}
+                    <p>
+                    <a href="" className="check">Check answers</a>
+                    </p>
                     <img src={blob4} className="blob4" />
-                </div>)}
+                </div>
+            )}
         </div>
     )
 }

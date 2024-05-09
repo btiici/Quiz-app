@@ -24,6 +24,7 @@ export default function Main (props){
         generateOptions()
     }, [])
 
+
     function holdOption(id){
         setOptions((prevOptions) => 
         prevOptions.map((option) =>
