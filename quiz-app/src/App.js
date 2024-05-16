@@ -4,13 +4,13 @@ import blob2 from "../src/images/blob 5.svg"
 import Main from "./components/Main"
 import blob3 from "./images/blob 2.svg"
 import blob4 from "./images/blob 3.svg"
-import { nanoid } from "nanoid";
-
 
 export default function App(){
     const [showMain, setShowMain]= React.useState(false)
 
     const [questions, setQuestions]=React.useState([])
+
+    const [checkAnswerFunction, setCheckAnswerFunction] = React.useState(null);
        
     function handleStartQuiz(){
         setShowMain(true);
@@ -32,9 +32,33 @@ export default function App(){
         )
     })
 
-    function checkAnswer(){
-       
-    }
+    
+
+    // function handleCheckAnswer(event, option, correctAnswer) {
+    //     event.preventDefault();
+    //     console.log("handleCheckAnswer called with:", option, correctAnswer);
+
+    //     if (checkAnswerFunction) {
+    //       const result = checkAnswerFunction(option, correctAnswer);
+    //       console.log("Answer result:", result);
+    //     }else {
+    //         console.log("checkAnswerFunction is not defined.");
+    //       }
+    //   }
+    // function handleAnswer(option, correctAnswer) {
+    //     const result = checkAnswer(option, correctAnswer);
+    //     setAnswers((prevAnswers) => [...prevAnswers, result]);
+    //   }
+
+    //   function handleCheckAnswers(event) {
+    //     const allCorrect = answers.every((answer) => answer === "green");
+    //     event.preventDefault();
+    //     if (allCorrect) {
+    //         console.log("All answers correct!");
+    //       } else {
+    //         console.log("Some answers are incorrect.");
+    //       }
+    //   }
      
     return(
         <div>
@@ -51,7 +75,7 @@ export default function App(){
                 <div className="main">
                     <img src={blob3} className="blob3" />
                     {allQuestions}
-                    <p>
+                    <p onClick={(event, option, correct_answer) => handleCheckAnswer(event, option, correct_answer)}>
                     <a href="" className="check">Check answers</a>
                     </p>
                     <img src={blob4} className="blob4" />

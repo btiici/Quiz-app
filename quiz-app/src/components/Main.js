@@ -1,5 +1,8 @@
 import React from "react"
 import { nanoid } from "nanoid";
+import EventEmitter from "eventemitter3";
+
+const emitter = new EventEmitter();
 
 export default function Main (props){
 
@@ -32,9 +35,15 @@ export default function Main (props){
       )
     );
   }
+// this function bellow, i want to use it for the check answer paragraph in the app.js.. 
+  function checkAnswer(option, correct_Answer) {
+    if (option.isHeld && option.text === correct_Answer) {
+      return "green";
+    }
+    return "red";
+  }
 
     const buttonElements = options.map((option) => {
-        console.log(options)
         return(
             <button
             key={option.id}
