@@ -9,8 +9,6 @@ export default function App(){
     const [showMain, setShowMain]= React.useState(false)
 
     const [questions, setQuestions]=React.useState([])
-
-    const [checkAnswerFunction, setCheckAnswerFunction] = React.useState(null);
        
     function handleStartQuiz(){
         setShowMain(true);
@@ -32,34 +30,6 @@ export default function App(){
         )
     })
 
-    
-
-    // function handleCheckAnswer(event, option, correctAnswer) {
-    //     event.preventDefault();
-    //     console.log("handleCheckAnswer called with:", option, correctAnswer);
-
-    //     if (checkAnswerFunction) {
-    //       const result = checkAnswerFunction(option, correctAnswer);
-    //       console.log("Answer result:", result);
-    //     }else {
-    //         console.log("checkAnswerFunction is not defined.");
-    //       }
-    //   }
-    // function handleAnswer(option, correctAnswer) {
-    //     const result = checkAnswer(option, correctAnswer);
-    //     setAnswers((prevAnswers) => [...prevAnswers, result]);
-    //   }
-
-    //   function handleCheckAnswers(event) {
-    //     const allCorrect = answers.every((answer) => answer === "green");
-    //     event.preventDefault();
-    //     if (allCorrect) {
-    //         console.log("All answers correct!");
-    //       } else {
-    //         console.log("Some answers are incorrect.");
-    //       }
-    //   }
-     
     return(
         <div>
             {!showMain && (

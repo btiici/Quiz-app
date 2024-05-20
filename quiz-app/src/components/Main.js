@@ -1,8 +1,5 @@
 import React from "react"
 import { nanoid } from "nanoid";
-import EventEmitter from "eventemitter3";
-
-const emitter = new EventEmitter();
 
 export default function Main (props){
 
